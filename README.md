@@ -1,6 +1,6 @@
 # Design an Expense Sharing System
 
-> You are tasked with designing an expense sharing system that allows users to track shared expenses among a group of people. The system should support the following functionalities:
+> You are tasked with designing an expense-sharing system that allows users to track shared expenses among a group of people. The system should support the following functionalities:
 
 1. **Add Expense:**
 
@@ -52,8 +52,8 @@
 
 3. **Generate Individual Summary:**
 
-   - Develop a function that generates a summary for each individual user.
-   - The summary should summarize all the expenses they are involved in and whether they owe money or are owed money.
+   - Develop a function that generates a summary for each user.
+   - The summary should summarize all the expenses involved and whether they owe or are owed money.
 
    **Examples**
 
@@ -143,8 +143,8 @@
 
    ### Constraints
 
-   - Treat this as a ds-algo problem, and you are expected to implement the solution in a language of your choice.
-   - Add Expense can have any time complexity, but the all other functions should have the least time complexity possible.
+   - Treat this as a ds-algo problem; You are expected to implement the complete solution in any language you choose.
+   - Add Expense can have any time complexity, but all other functions should have the least time complexity possible.
    - Space complexity should be optimized but not at the cost of time complexity.
 
 ---
