@@ -1,50 +1,150 @@
-# I_Q
+# Design an Expense Sharing System
 
-**Title: Block Creation and Timestamp Matching**
+> You are tasked with designing an expense sharing system that allows users to track shared expenses among a group of people. The system should support the following functionalities:
 
-_Question:_
-Imagine a blockchain where blocks are created within a time range of 10-14 seconds. The block numbering starts at 1, and each block is generated at an interval within this timeframe. Your task is to simulate the creation of 100 blocks adhering to this time range.
+1. **Add Expense:**
 
-Following the block creation, the next challenge is to identify the closest block number corresponding to a given timestamp in seconds. How would you approach this task effectively?
+   - Create a function that enables a user to add an expense.
+   - Parameters:
+     - Main user (the one who paid)
+     - Amount of the expense
+     - List of users included in the payment
 
-The goal is twofold:
+   **Examples**
 
-1. Generate 100 blocks within the specified time range.
-2. Develop a method or algorithm to determine the closest block number concerning any given timestamp within this sequence.
+   ```typescript
+   expenseSystem.addExpense("A", 1000, ["B", "C", "D"]);
+   expenseSystem.addExpense("B", 1200, ["A", "C"]);
+   expenseSystem.addExpense("C", 400, ["A", "B", "D"]);
+   ```
 
-Describe the steps and logic you'd employ to achieve both objectives. This question evaluates your understanding of time intervals, sequencing, and algorithmic thinking in the context of blockchain technology.
+2. **List User's Expenses:**
 
-#### Random function
+   - Implement a function that lists all the expenses a given user is involved in.
+   - Details to include: Main user, amount, and the other participants.
 
-```javascript
-function getRandomBlockTime() {
-  return Math.floor(Math.random() * (14 - 10 + 1)) + 10;
-}
-```
+   **Example 1: User D**
+
+   ```typescript
+   const userAExpenses = expenseSystem.listUserExpenses("D");
+   ```
+
+   **Expected Output:**
+
+   ```
+   // 1. A Pays 1000 with B, C, and D
+   // 2. C Pays 400 with A, B, and D
+   ```
+
+   **Example 2: User C**
+
+   ```typescript
+   const userAExpenses = expenseSystem.listUserExpenses("C");
+   ```
+
+   **Expected Output:**
+
+   ```
+   // 1. A Pays 1000 with B, C, and D
+   // 2. B Pays 1200 with A and C
+   // 3. C Pays 400 with A, B, and D
+   ```
+
+3. **Generate Individual Summary:**
+
+   - Develop a function that generates a summary for each individual user.
+   - The summary should summarize all the expenses they are involved in and whether they owe money or are owed money.
+
+   **Examples**
+
+   ```typescript
+   expenseSystem.addExpense("A", 1000, ["B", "C", "D"]);
+   const userASummary = expenseSystem.generateIndividualSummary("A");
+   // After the above expense, the following summary is generated for A:
+   ```
+
+   ```
+    B owes A 250
+    C owes A 250
+    D owes A 250
+   ```
+
+   ```typescript
+   expenseSystem.addExpense("B", 1200, ["A", "C"]);
+   // After the above expense, the following summary is generated for A:
+   const userASummary = expenseSystem.generateIndividualSummary("A");
+   ```
+
+   ```
+     A owes B 150 ( 400 - 250 )
+     C owes A 250
+     D owes A 250
+   ```
+
+   ```typescript
+   expenseSystem.addExpense("C", 400, ["A", "B", "D"]);
+   // After the above expense, the following summary is generated for A:
+   const userASummary = expenseSystem.generateIndividualSummary("A");
+   ```
+
+   ```
+   A owes B 150 ( 400 - 250 )
+   C owes A 150 ( 250 - 100 )
+   D owes A 250
+   ```
+
+4. **Settle Funds:**
+
+   - Design a function that calculates and performs fund settlements between two users.
+   - Given two users, find the simplest way to settle the debts if any exist.
+
+   **Examples**
+
+   ```typescript
+   // Example Function call
+   // Just pass 2 users and get the settlement b/w these 2 users
+   const settlementsAB = expenseSystem.settleFunds("A", "B");
+   ```
+
+   **Example after each expense added:**
+
+   ```
+    expenseSystem.addExpense("A", 1000, ["B", "C", "D"]);
+    // After the above expense, the following should be the settlements
+
+    > settleFunds("A", "B"):
+    Output: B owes A 250
+
+    > settleFunds("A", "C"):
+    Output: C owes A 250
+
+    expenseSystem.addExpense("B", 1200, ["A", "C"]);
+    // After the above expense, the following should be the settlements
+
+    > settleFunds("A", "B"):
+    Output: A owes B 150
+
+    > settleFunds("A", "C"):
+    Output: C owes A 250
+
+    > settleFunds("B", "C"):
+    Output: C owes B 400
 
 
+    expenseSystem.addExpense("C", 400, ["B", "D", "F"]);
+    // After the above expense, the following should be the settlements
 
----
+    > settleFunds("A", "B"):
+    Output: A owes B 150
 
-**Title: Optimizing Multiple API Calls for Balances**
+    > settleFunds("A", "C"):
+    Output: C owes A 150
+   ```
 
-_Question:_
-You are tasked with fetching balances for n wallet addresses across 5 different APIs, each associated with a specific blockchain. However, these APIs impose varying rate limits per second:
+   ### Constraints
 
-- API 1: 2 calls per second
-- API 2: 3 calls per second
-- API 3: 4 calls per second
-- API 4: 5 calls per second
-- API 5: 1 call per second
-
-The challenge is to design an approach that enables fetching the balances of these wallets in the shortest time possible while respecting the rate limits of each API. How would you efficiently coordinate the API calls to achieve this goal without hitting the rate limits excessively?
-
-Considerations:
-
-- There are a total of 75 API calls needed (5 APIs \* 15 wallet addresses).
-- Optimize the sequence and parallelism of API calls while adhering to the specific rate limits.
-- Implement strategies to handle rate limit constraints, minimize execution time, and manage potential API call failures.
-
-Explain your methodology and the logic behind your approach to manage these API calls effectively.
+   - Treat this as a ds-algo problem, and you are expected to implement the solution in a language of your choice.
+   - Add Expense can have any time complexity, but the all other functions should have the least time complexity possible.
+   - Space complexity should be optimized but not at the cost of time complexity.
 
 ---
