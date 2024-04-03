@@ -108,7 +108,7 @@
 
    **Example after each expense added:**
 
-   ```
+   ```typescript
     expenseSystem.addExpense("A", 1000, ["B", "C", "D"]);
     // After the above expense, the following should be the settlements
 
