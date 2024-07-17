@@ -255,9 +255,3 @@ Beginner-level string and array problems with examples to help you get started:
       Input: [1, 2, 3, 7, 5], 12
       Output: true (subarray [2, 3, 7])
       ```
-
-21. **Find the Maximum Subarray Sum**
-    - **Problem**: Find the sum of the largest subarray.
-    - **Example**:
-      ```javascript
-      Input: [-2, 1, -3, 4
