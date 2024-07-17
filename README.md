@@ -1,150 +1,263 @@
-# Design an Expense Sharing System
+Beginner-level string and array problems with examples to help you get started:
 
-> You are tasked with designing an expense-sharing system that allows users to track shared expenses among a group of people. The system should support the following functionalities:
+### String Problems
 
-1. **Add Expense:**
+1. **Reverse a String**
+   - **Problem**: Reverse the given string.
+   - **Example**:
+     ```javascript
+     Input: "hello"
+     Output: "olleh"
+     ```
 
-   - Create a function that enables a user to add an expense.
-   - Parameters:
-     - Main user (the one who paid)
-     - Amount of the expense
-     - List of users included in the payment
+2. **Check if a String is a Palindrome**
+   - **Problem**: Check if the given string reads the same backward as forward.
+   - **Example**:
+     ```javascript
+     Input: "racecar"
+     Output: true
+     
+     Input: "hello"
+     Output: false
+     ```
 
-   **Examples**
+3. **Count Occurrences of a Character**
+   - **Problem**: Count the number of times a given character appears in a string.
+   - **Example**:
+     ```javascript
+     Input: "hello", "l"
+     Output: 2
+     ```
 
-   ```typescript
-   expenseSystem.addExpense("A", 1000, ["B", "C", "D"]);
-   expenseSystem.addExpense("B", 1200, ["A", "C"]);
-   expenseSystem.addExpense("C", 400, ["A", "B", "D"]);
-   ```
+4. **Find the First Non-Repeating Character**
+   - **Problem**: Find the first character that does not repeat in a string.
+   - **Example**:
+     ```javascript
+     Input: "swiss"
+     Output: "w"
+     ```
 
-2. **List User's Expenses:**
+5. **Remove Duplicates from a String**
+   - **Problem**: Remove duplicate characters from a string.
+   - **Example**:
+     ```javascript
+     Input: "programming"
+     Output: "progamin"
+     ```
 
-   - Implement a function that lists all the expenses a given user is involved in.
-   - Details to include: Main user, amount, and the other participants.
+6. **Count Vowels and Consonants**
+   - **Problem**: Count the number of vowels and consonants in a string.
+   - **Example**:
+     ```javascript
+     Input: "hello"
+     Output: { vowels: 2, consonants: 3 }
+     ```
 
-   **Example 1: User D**
+7. **Check for Anagrams**
+   - **Problem**: Check if two strings are anagrams of each other.
+   - **Example**:
+     ```javascript
+     Input: "listen", "silent"
+     Output: true
+     
+     Input: "hello", "world"
+     Output: false
+     ```
 
-   ```typescript
-   const userAExpenses = expenseSystem.listUserExpenses("D");
-   ```
+8. **Replace Spaces with %20**
+   - **Problem**: Replace all spaces in a string with `%20`.
+   - **Example**:
+     ```javascript
+     Input: "Mr John Smith"
+     Output: "Mr%20John%20Smith"
+     ```
 
-   **Expected Output:**
+9. **Find the Longest Common Prefix**
+   - **Problem**: Find the longest common prefix among an array of strings.
+   - **Example**:
+     ```javascript
+     Input: ["flower", "flow", "flight"]
+     Output: "fl"
+     ```
 
-   ```
-   // 1. A Pays 1000 with B, C, and D
-   // 2. C Pays 400 with A, B, and D
-   ```
+10. **Check if a String Contains Only Digits**
+    - **Problem**: Check if the given string contains only digits.
+    - **Example**:
+      ```javascript
+      Input: "12345"
+      Output: true
+      
+      Input: "123a45"
+      Output: false
+      ```
 
-   **Example 2: User C**
+### Array Problems
 
-   ```typescript
-   const userAExpenses = expenseSystem.listUserExpenses("C");
-   ```
+1. **Find Duplicates in an Array**
+   - **Problem**: Find all duplicates in the given array.
+   - **Example**:
+     ```javascript
+     Input: [1, 2, 3, 2, 4, 5, 1]
+     Output: [1, 2]
+     ```
 
-   **Expected Output:**
+2. **Find the Maximum Element**
+   - **Problem**: Find the maximum element in the array.
+   - **Example**:
+     ```javascript
+     Input: [1, 2, 3, 4, 5]
+     Output: 5
+     ```
 
-   ```
-   // 1. A Pays 1000 with B, C, and D
-   // 2. B Pays 1200 with A and C
-   // 3. C Pays 400 with A, B, and D
-   ```
+3. **Find the Minimum Element**
+   - **Problem**: Find the minimum element in the array.
+   - **Example**:
+     ```javascript
+     Input: [1, 2, 3, 4, 5]
+     Output: 1
+     ```
 
-3. **Generate Individual Summary:**
+4. **Reverse an Array**
+   - **Problem**: Reverse the given array.
+   - **Example**:
+     ```javascript
+     Input: [1, 2, 3, 4, 5]
+     Output: [5, 4, 3, 2, 1]
+     ```
 
-   - Develop a function that generates a summary for each user.
-   - The summary should summarize all the expenses involved and whether they owe or are owed money.
+5. **Find the Sum of Elements**
+   - **Problem**: Find the sum of all elements in the array.
+   - **Example**:
+     ```javascript
+     Input: [1, 2, 3, 4, 5]
+     Output: 15
+     ```
 
-   **Examples**
+6. **Find the Product of Elements**
+   - **Problem**: Find the product of all elements in the array.
+   - **Example**:
+     ```javascript
+     Input: [1, 2, 3, 4, 5]
+     Output: 120
+     ```
 
-   ```typescript
-   expenseSystem.addExpense("A", 1000, ["B", "C", "D"]);
-   const userASummary = expenseSystem.generateIndividualSummary("A");
-   // After the above expense, the following summary is generated for A:
-   ```
+7. **Check if Array is Sorted**
+   - **Problem**: Check if the array is sorted in ascending order.
+   - **Example**:
+     ```javascript
+     Input: [1, 2, 3, 4, 5]
+     Output: true
+     
+     Input: [5, 4, 3, 2, 1]
+     Output: false
+     ```
 
-   ```
-    B owes A 250
-    C owes A 250
-    D owes A 250
-   ```
+8. **Remove Duplicates from an Array**
+   - **Problem**: Remove duplicates from the given array.
+   - **Example**:
+     ```javascript
+     Input: [1, 2, 3, 2, 4, 5, 1]
+     Output: [1, 2, 3, 4, 5]
+     ```
 
-   ```typescript
-   expenseSystem.addExpense("B", 1200, ["A", "C"]);
-   // After the above expense, the following summary is generated for A:
-   const userASummary = expenseSystem.generateIndividualSummary("A");
-   ```
+9. **Rotate Array by One Position**
+   - **Problem**: Rotate the array elements by one position to the right.
+   - **Example**:
+     ```javascript
+     Input: [1, 2, 3, 4, 5]
+     Output: [5, 1, 2, 3, 4]
+     ```
 
-   ```
-     A owes B 150 ( 400 - 250 )
-     C owes A 250
-     D owes A 250
-   ```
+10. **Find the Second Largest Element**
+    - **Problem**: Find the second largest element in the array.
+    - **Example**:
+      ```javascript
+      Input: [1, 2, 3, 4, 5]
+      Output: 4
+      ```
 
-   ```typescript
-   expenseSystem.addExpense("C", 400, ["A", "B", "D"]);
-   // After the above expense, the following summary is generated for A:
-   const userASummary = expenseSystem.generateIndividualSummary("A");
-   ```
+11. **Find the Intersection of Two Arrays**
+    - **Problem**: Find the intersection of two arrays.
+    - **Example**:
+      ```javascript
+      Input: [1, 2, 3], [2, 3, 4]
+      Output: [2, 3]
+      ```
 
-   ```
-   A owes B 150 ( 400 - 250 )
-   C owes A 150 ( 250 - 100 )
-   D owes A 250
-   ```
+12. **Find the Union of Two Arrays**
+    - **Problem**: Find the union of two arrays.
+    - **Example**:
+      ```javascript
+      Input: [1, 2, 3], [2, 3, 4]
+      Output: [1, 2, 3, 4]
+      ```
 
-4. **Settle Funds:**
+13. **Find the Difference of Two Arrays**
+    - **Problem**: Find the elements that are in the first array but not in the second array.
+    - **Example**:
+      ```javascript
+      Input: [1, 2, 3], [2, 3, 4]
+      Output: [1]
+      ```
 
-   - Design a function that calculates and performs fund settlements between two users.
-   - Given two users, find the simplest way to settle the debts if any exist.
+14. **Find the Pair with a Given Sum**
+    - **Problem**: Find all pairs of elements that sum up to a given number.
+    - **Example**:
+      ```javascript
+      Input: [1, 2, 3, 4, 5], 6
+      Output: [[1, 5], [2, 4]]
+      ```
 
-   **Examples**
+15. **Move All Zeros to End**
+    - **Problem**: Move all zeros in the array to the end while maintaining the order of other elements.
+    - **Example**:
+      ```javascript
+      Input: [0, 1, 0, 3, 12]
+      Output: [1, 3, 12, 0, 0]
+      ```
 
-   ```typescript
-   // Example Function call
-   // Just pass 2 users and get the settlement b/w these 2 users
-   const settlementsAB = expenseSystem.settleFunds("A", "B");
-   ```
+16. **Find the Missing Number**
+    - **Problem**: Find the missing number in an array of 1 to n.
+    - **Example**:
+      ```javascript
+      Input: [1, 2, 4, 5, 6]
+      Output: 3
+      ```
 
-   **Example after each expense added:**
+17. **Find the Duplicate Number**
+    - **Problem**: Find the duplicate number in an array.
+    - **Example**:
+      ```javascript
+      Input: [1, 3, 4, 2, 2]
+      Output: 2
+      ```
 
-   ```typescript
-    expenseSystem.addExpense("A", 1000, ["B", "C", "D"]);
-    // After the above expense, the following should be the settlements
+18. **Find the Element that Appears Once**
+    - **Problem**: Find the element that appears only once in an array where all other elements appear twice.
+    - **Example**:
+      ```javascript
+      Input: [2, 2, 1]
+      Output: 1
+      ```
 
-    > settleFunds("A", "B"):
-    Output: B owes A 250
+19. **Find the Majority Element**
+    - **Problem**: Find the element that appears more than n/2 times in an array of size n.
+    - **Example**:
+      ```javascript
+      Input: [3, 2, 3]
+      Output: 3
+      ```
 
-    > settleFunds("A", "C"):
-    Output: C owes A 250
+20. **Check for Subarray with Given Sum**
+    - **Problem**: Check if there is a subarray with a sum equal to a given number.
+    - **Example**:
+      ```javascript
+      Input: [1, 2, 3, 7, 5], 12
+      Output: true (subarray [2, 3, 7])
+      ```
 
-    expenseSystem.addExpense("B", 1200, ["A", "C"]);
-    // After the above expense, the following should be the settlements
-
-    > settleFunds("A", "B"):
-    Output: A owes B 150
-
-    > settleFunds("A", "C"):
-    Output: C owes A 250
-
-    > settleFunds("B", "C"):
-    Output: C owes B 400
-
-
-    expenseSystem.addExpense("C", 400, ["B", "D", "F"]);
-    // After the above expense, the following should be the settlements
-
-    > settleFunds("A", "B"):
-    Output: A owes B 150
-
-    > settleFunds("A", "C"):
-    Output: C owes A 150
-   ```
-
-   ### Constraints
-
-   - Treat this as a ds-algo problem; You are expected to implement the complete solution in any language you choose.
-   - Add Expense can have any time complexity, but all other functions should have the least time complexity possible.
-   - Space complexity should be optimized but not at the cost of time complexity.
-
----
+21. **Find the Maximum Subarray Sum**
+    - **Problem**: Find the sum of the largest subarray.
+    - **Example**:
+      ```javascript
+      Input: [-2, 1, -3, 4
